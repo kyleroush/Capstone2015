@@ -1,0 +1,550 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DB3FBBD31BF824C4004C22A3 /* Genre.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3FBBD21BF824C4004C22A3 /* Genre.swift */; };
+		DB3FBBD41BF824C4004C22A3 /* Genre.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3FBBD21BF824C4004C22A3 /* Genre.swift */; };
+		DB3FBBD61BF8275A004C22A3 /* GenreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3FBBD51BF8275A004C22A3 /* GenreTableViewController.swift */; };
+		DB3FBBD71BF8275A004C22A3 /* GenreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3FBBD51BF8275A004C22A3 /* GenreTableViewController.swift */; };
+		DB3FBBD91BF8297A004C22A3 /* GenreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3FBBD81BF8297A004C22A3 /* GenreTableViewCell.swift */; };
+		DB3FBBDA1BF8297A004C22A3 /* GenreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3FBBD81BF8297A004C22A3 /* GenreTableViewCell.swift */; };
+		DB3FBBDC1BF94B64004C22A3 /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3FBBDB1BF94B64004C22A3 /* Song.swift */; };
+		DB3FBBDD1BF94B64004C22A3 /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3FBBDB1BF94B64004C22A3 /* Song.swift */; };
+		DB3FBBE51BFA9195004C22A3 /* SongTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3FBBE41BFA9195004C22A3 /* SongTableViewCell.swift */; };
+		DB3FBBE61BFA9195004C22A3 /* SongTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3FBBE41BFA9195004C22A3 /* SongTableViewCell.swift */; };
+		DB3FBBE81BFA936A004C22A3 /* SongTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3FBBE71BFA936A004C22A3 /* SongTableViewController.swift */; };
+		DB3FBBE91BFA936A004C22A3 /* SongTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3FBBE71BFA936A004C22A3 /* SongTableViewController.swift */; };
+		DB9AEA7B1BF6D6AC00506C24 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9AEA7A1BF6D6AC00506C24 /* AppDelegate.swift */; };
+		DB9AEA7D1BF6D6AC00506C24 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9AEA7C1BF6D6AC00506C24 /* ViewController.swift */; };
+		DB9AEA801BF6D6AC00506C24 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB9AEA7E1BF6D6AC00506C24 /* Main.storyboard */; };
+		DB9AEA821BF6D6AC00506C24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB9AEA811BF6D6AC00506C24 /* Assets.xcassets */; };
+		DB9AEA851BF6D6AC00506C24 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB9AEA831BF6D6AC00506C24 /* LaunchScreen.storyboard */; };
+		DB9AEA901BF6D6AC00506C24 /* FermataBetaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9AEA8F1BF6D6AC00506C24 /* FermataBetaTests.swift */; };
+		DB9AEA9B1BF6D6AC00506C24 /* FermataBetaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9AEA9A1BF6D6AC00506C24 /* FermataBetaUITests.swift */; };
+		DBAD8C251C03D42F0049484B /* test.js in Resources */ = {isa = PBXBuildFile; fileRef = DBAD8C241C03D42F0049484B /* test.js */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DB9AEA8C1BF6D6AC00506C24 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB9AEA6F1BF6D6AC00506C24 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DB9AEA761BF6D6AC00506C24;
+			remoteInfo = FermataBeta;
+		};
+		DB9AEA971BF6D6AC00506C24 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB9AEA6F1BF6D6AC00506C24 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DB9AEA761BF6D6AC00506C24;
+			remoteInfo = FermataBeta;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		DB3FBBD21BF824C4004C22A3 /* Genre.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Genre.swift; sourceTree = "<group>"; };
+		DB3FBBD51BF8275A004C22A3 /* GenreTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenreTableViewController.swift; sourceTree = "<group>"; };
+		DB3FBBD81BF8297A004C22A3 /* GenreTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenreTableViewCell.swift; sourceTree = "<group>"; };
+		DB3FBBDB1BF94B64004C22A3 /* Song.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
+		DB3FBBE41BFA9195004C22A3 /* SongTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongTableViewCell.swift; sourceTree = "<group>"; };
+		DB3FBBE71BFA936A004C22A3 /* SongTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongTableViewController.swift; sourceTree = "<group>"; };
+		DB9AEA771BF6D6AC00506C24 /* FermataBeta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FermataBeta.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB9AEA7A1BF6D6AC00506C24 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DB9AEA7C1BF6D6AC00506C24 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DB9AEA7F1BF6D6AC00506C24 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DB9AEA811BF6D6AC00506C24 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DB9AEA841BF6D6AC00506C24 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DB9AEA861BF6D6AC00506C24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB9AEA8B1BF6D6AC00506C24 /* FermataBetaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FermataBetaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB9AEA8F1BF6D6AC00506C24 /* FermataBetaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FermataBetaTests.swift; sourceTree = "<group>"; };
+		DB9AEA911BF6D6AC00506C24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB9AEA961BF6D6AC00506C24 /* FermataBetaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FermataBetaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB9AEA9A1BF6D6AC00506C24 /* FermataBetaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FermataBetaUITests.swift; sourceTree = "<group>"; };
+		DB9AEA9C1BF6D6AC00506C24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DBAD8C241C03D42F0049484B /* test.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = test.js; path = ../../test.js; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DB9AEA741BF6D6AC00506C24 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB9AEA881BF6D6AC00506C24 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB9AEA931BF6D6AC00506C24 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DB9AEA6E1BF6D6AC00506C24 = {
+			isa = PBXGroup;
+			children = (
+				DB9AEA791BF6D6AC00506C24 /* FermataBeta */,
+				DB9AEA8E1BF6D6AC00506C24 /* FermataBetaTests */,
+				DB9AEA991BF6D6AC00506C24 /* FermataBetaUITests */,
+				DB9AEA781BF6D6AC00506C24 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DB9AEA781BF6D6AC00506C24 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DB9AEA771BF6D6AC00506C24 /* FermataBeta.app */,
+				DB9AEA8B1BF6D6AC00506C24 /* FermataBetaTests.xctest */,
+				DB9AEA961BF6D6AC00506C24 /* FermataBetaUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DB9AEA791BF6D6AC00506C24 /* FermataBeta */ = {
+			isa = PBXGroup;
+			children = (
+				DB9AEA7A1BF6D6AC00506C24 /* AppDelegate.swift */,
+				DBAD8C241C03D42F0049484B /* test.js */,
+				DB3FBBD51BF8275A004C22A3 /* GenreTableViewController.swift */,
+				DB3FBBDB1BF94B64004C22A3 /* Song.swift */,
+				DB3FBBD81BF8297A004C22A3 /* GenreTableViewCell.swift */,
+				DB9AEA7C1BF6D6AC00506C24 /* ViewController.swift */,
+				DB9AEA7E1BF6D6AC00506C24 /* Main.storyboard */,
+				DB3FBBE71BFA936A004C22A3 /* SongTableViewController.swift */,
+				DB3FBBE41BFA9195004C22A3 /* SongTableViewCell.swift */,
+				DB9AEA811BF6D6AC00506C24 /* Assets.xcassets */,
+				DB9AEA831BF6D6AC00506C24 /* LaunchScreen.storyboard */,
+				DB3FBBD21BF824C4004C22A3 /* Genre.swift */,
+				DB9AEA861BF6D6AC00506C24 /* Info.plist */,
+			);
+			path = FermataBeta;
+			sourceTree = "<group>";
+		};
+		DB9AEA8E1BF6D6AC00506C24 /* FermataBetaTests */ = {
+			isa = PBXGroup;
+			children = (
+				DB9AEA8F1BF6D6AC00506C24 /* FermataBetaTests.swift */,
+				DB9AEA911BF6D6AC00506C24 /* Info.plist */,
+			);
+			path = FermataBetaTests;
+			sourceTree = "<group>";
+		};
+		DB9AEA991BF6D6AC00506C24 /* FermataBetaUITests */ = {
+			isa = PBXGroup;
+			children = (
+				DB9AEA9A1BF6D6AC00506C24 /* FermataBetaUITests.swift */,
+				DB9AEA9C1BF6D6AC00506C24 /* Info.plist */,
+			);
+			path = FermataBetaUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DB9AEA761BF6D6AC00506C24 /* FermataBeta */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DB9AEA9F1BF6D6AC00506C24 /* Build configuration list for PBXNativeTarget "FermataBeta" */;
+			buildPhases = (
+				DB9AEA731BF6D6AC00506C24 /* Sources */,
+				DB9AEA741BF6D6AC00506C24 /* Frameworks */,
+				DB9AEA751BF6D6AC00506C24 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FermataBeta;
+			productName = FermataBeta;
+			productReference = DB9AEA771BF6D6AC00506C24 /* FermataBeta.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DB9AEA8A1BF6D6AC00506C24 /* FermataBetaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DB9AEAA21BF6D6AC00506C24 /* Build configuration list for PBXNativeTarget "FermataBetaTests" */;
+			buildPhases = (
+				DB9AEA871BF6D6AC00506C24 /* Sources */,
+				DB9AEA881BF6D6AC00506C24 /* Frameworks */,
+				DB9AEA891BF6D6AC00506C24 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DB9AEA8D1BF6D6AC00506C24 /* PBXTargetDependency */,
+			);
+			name = FermataBetaTests;
+			productName = FermataBetaTests;
+			productReference = DB9AEA8B1BF6D6AC00506C24 /* FermataBetaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		DB9AEA951BF6D6AC00506C24 /* FermataBetaUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DB9AEAA51BF6D6AC00506C24 /* Build configuration list for PBXNativeTarget "FermataBetaUITests" */;
+			buildPhases = (
+				DB9AEA921BF6D6AC00506C24 /* Sources */,
+				DB9AEA931BF6D6AC00506C24 /* Frameworks */,
+				DB9AEA941BF6D6AC00506C24 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DB9AEA981BF6D6AC00506C24 /* PBXTargetDependency */,
+			);
+			name = FermataBetaUITests;
+			productName = FermataBetaUITests;
+			productReference = DB9AEA961BF6D6AC00506C24 /* FermataBetaUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DB9AEA6F1BF6D6AC00506C24 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0710;
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = "Young Liu";
+				TargetAttributes = {
+					DB9AEA761BF6D6AC00506C24 = {
+						CreatedOnToolsVersion = 7.1.1;
+					};
+					DB9AEA8A1BF6D6AC00506C24 = {
+						CreatedOnToolsVersion = 7.1.1;
+						TestTargetID = DB9AEA761BF6D6AC00506C24;
+					};
+					DB9AEA951BF6D6AC00506C24 = {
+						CreatedOnToolsVersion = 7.1.1;
+						TestTargetID = DB9AEA761BF6D6AC00506C24;
+					};
+				};
+			};
+			buildConfigurationList = DB9AEA721BF6D6AC00506C24 /* Build configuration list for PBXProject "FermataBeta" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DB9AEA6E1BF6D6AC00506C24;
+			productRefGroup = DB9AEA781BF6D6AC00506C24 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DB9AEA761BF6D6AC00506C24 /* FermataBeta */,
+				DB9AEA8A1BF6D6AC00506C24 /* FermataBetaTests */,
+				DB9AEA951BF6D6AC00506C24 /* FermataBetaUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DB9AEA751BF6D6AC00506C24 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB9AEA851BF6D6AC00506C24 /* LaunchScreen.storyboard in Resources */,
+				DB9AEA821BF6D6AC00506C24 /* Assets.xcassets in Resources */,
+				DBAD8C251C03D42F0049484B /* test.js in Resources */,
+				DB9AEA801BF6D6AC00506C24 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB9AEA891BF6D6AC00506C24 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB9AEA941BF6D6AC00506C24 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DB9AEA731BF6D6AC00506C24 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB3FBBDC1BF94B64004C22A3 /* Song.swift in Sources */,
+				DB3FBBD31BF824C4004C22A3 /* Genre.swift in Sources */,
+				DB3FBBD61BF8275A004C22A3 /* GenreTableViewController.swift in Sources */,
+				DB3FBBE51BFA9195004C22A3 /* SongTableViewCell.swift in Sources */,
+				DB3FBBD91BF8297A004C22A3 /* GenreTableViewCell.swift in Sources */,
+				DB9AEA7D1BF6D6AC00506C24 /* ViewController.swift in Sources */,
+				DB3FBBE81BFA936A004C22A3 /* SongTableViewController.swift in Sources */,
+				DB9AEA7B1BF6D6AC00506C24 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB9AEA871BF6D6AC00506C24 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB3FBBE61BFA9195004C22A3 /* SongTableViewCell.swift in Sources */,
+				DB3FBBE91BFA936A004C22A3 /* SongTableViewController.swift in Sources */,
+				DB3FBBDD1BF94B64004C22A3 /* Song.swift in Sources */,
+				DB3FBBD71BF8275A004C22A3 /* GenreTableViewController.swift in Sources */,
+				DB9AEA901BF6D6AC00506C24 /* FermataBetaTests.swift in Sources */,
+				DB3FBBD41BF824C4004C22A3 /* Genre.swift in Sources */,
+				DB3FBBDA1BF8297A004C22A3 /* GenreTableViewCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DB9AEA921BF6D6AC00506C24 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DB9AEA9B1BF6D6AC00506C24 /* FermataBetaUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DB9AEA8D1BF6D6AC00506C24 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DB9AEA761BF6D6AC00506C24 /* FermataBeta */;
+			targetProxy = DB9AEA8C1BF6D6AC00506C24 /* PBXContainerItemProxy */;
+		};
+		DB9AEA981BF6D6AC00506C24 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DB9AEA761BF6D6AC00506C24 /* FermataBeta */;
+			targetProxy = DB9AEA971BF6D6AC00506C24 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DB9AEA7E1BF6D6AC00506C24 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DB9AEA7F1BF6D6AC00506C24 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DB9AEA831BF6D6AC00506C24 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DB9AEA841BF6D6AC00506C24 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DB9AEA9D1BF6D6AC00506C24 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DB9AEA9E1BF6D6AC00506C24 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DB9AEAA01BF6D6AC00506C24 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = FermataBeta/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.FermataBeta;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		DB9AEAA11BF6D6AC00506C24 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = FermataBeta/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.FermataBeta;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		DB9AEAA31BF6D6AC00506C24 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = FermataBetaTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.FermataBetaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FermataBeta.app/FermataBeta";
+			};
+			name = Debug;
+		};
+		DB9AEAA41BF6D6AC00506C24 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = FermataBetaTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.FermataBetaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FermataBeta.app/FermataBeta";
+			};
+			name = Release;
+		};
+		DB9AEAA61BF6D6AC00506C24 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = FermataBetaUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.FermataBetaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = FermataBeta;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		DB9AEAA71BF6D6AC00506C24 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = FermataBetaUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.FermataBetaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = FermataBeta;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DB9AEA721BF6D6AC00506C24 /* Build configuration list for PBXProject "FermataBeta" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB9AEA9D1BF6D6AC00506C24 /* Debug */,
+				DB9AEA9E1BF6D6AC00506C24 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DB9AEA9F1BF6D6AC00506C24 /* Build configuration list for PBXNativeTarget "FermataBeta" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB9AEAA01BF6D6AC00506C24 /* Debug */,
+				DB9AEAA11BF6D6AC00506C24 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DB9AEAA21BF6D6AC00506C24 /* Build configuration list for PBXNativeTarget "FermataBetaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB9AEAA31BF6D6AC00506C24 /* Debug */,
+				DB9AEAA41BF6D6AC00506C24 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DB9AEAA51BF6D6AC00506C24 /* Build configuration list for PBXNativeTarget "FermataBetaUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DB9AEAA61BF6D6AC00506C24 /* Debug */,
+				DB9AEAA71BF6D6AC00506C24 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DB9AEA6F1BF6D6AC00506C24 /* Project object */;
+}
