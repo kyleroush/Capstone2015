@@ -99,5 +99,68 @@
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FermataBeta/AppDelegate.swift"
+            timestampString = "470335696.18293"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "12"
+            endingLineNumber = "12"
+            landmarkName = "AppDelegate"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FermataBeta.AppDelegate.__deallocating_deinit"
+                  moduleName = "FermataBeta"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/youngliu/Documents/EECS_581/FermataBeta/FermataBeta/AppDelegate.swift"
+                  timestampString = "470336467.26134"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "19">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FermataBeta.AppDelegate.init (FermataBeta.AppDelegate.Type)() -&gt; FermataBeta.AppDelegate"
+                  moduleName = "FermataBeta"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/youngliu/Documents/EECS_581/FermataBeta/FermataBeta/AppDelegate.swift"
+                  timestampString = "470336467.26226"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "19">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "main"
+                  moduleName = "FermataBeta"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/youngliu/Documents/EECS_581/FermataBeta/FermataBeta/AppDelegate.swift"
+                  timestampString = "470336467.262459"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "32">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

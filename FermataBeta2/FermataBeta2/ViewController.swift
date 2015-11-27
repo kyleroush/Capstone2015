@@ -1,8 +1,8 @@
 //
 //  ViewController.swift
-//  FermataBeta
+//  FermataBeta2
 //
-//  Created by Young Liu on 11/13/15.
+//  Created by Young Liu on 11/26/15.
 //  Copyright © 2015 Young Liu. All rights reserved.
 //
 

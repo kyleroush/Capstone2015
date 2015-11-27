@@ -11,7 +11,6 @@ import UIKit
 class GenreTableViewController: UITableViewController {
     // MARK: Properties
     
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()

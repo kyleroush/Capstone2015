@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="2Mw-gA-aZH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="S7W-aS-m7B">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
@@ -46,26 +46,36 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fXz-ia-JYg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-919" y="229"/>
+            <point key="canvasLocation" x="-999" y="229"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="mJh-mU-hMX">
+        <!--Song View Controller-->
+        <scene sceneID="7Gr-c1-83y">
             <objects>
-                <viewController id="Ndm-o2-oLn" sceneMemberID="viewController">
+                <viewController id="S7W-aS-m7B" customClass="SongViewController" customModule="FermataBeta" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="deJ-PP-3t2"/>
-                        <viewControllerLayoutGuide type="bottom" id="x7S-Gl-UJg"/>
+                        <viewControllerLayoutGuide type="top" id="38a-4n-eGC"/>
+                        <viewControllerLayoutGuide type="bottom" id="U84-Yd-Knx"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="OYc-tD-Hpq">
+                    <view key="view" contentMode="scaleToFill" id="u1l-al-IfP">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VU1-IZ-jPU">
+                                <rect key="frame" x="135" y="109" width="240" height="128"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                            </webView>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="webView" destination="VU1-IZ-jPU" id="cmi-y2-fS2"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Res-rT-LgO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gld-Cc-OlY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-265" y="229"/>
+            <point key="canvasLocation" x="-275" y="308"/>
         </scene>
     </scenes>
 </document>

@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import JavaScriptCore
 
 class Song {
     //MARK: Properties
