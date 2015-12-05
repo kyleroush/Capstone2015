@@ -72,7 +72,7 @@
                                 <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                 <animations/>
                                 <items>
-                                    <navigationItem title="Song Title" id="vAE-g3-uPw">
+                                    <navigationItem id="vAE-g3-uPw">
                                         <barButtonItem key="leftBarButtonItem" title="Back" id="N1b-5Y-Wg4">
                                             <connections>
                                                 <segue destination="2Mw-gA-aZH" kind="show" id="mFJ-br-Mx6"/>
@@ -81,12 +81,21 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mhc-Kv-Wdh">
+                                <rect key="frame" x="188" y="39" width="252" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="SongTitle" id="NjJ-Ls-C2b"/>
                     <connections>
+                        <outlet property="songName" destination="mhc-Kv-Wdh" id="PLL-Ml-K0N"/>
+                        <outlet property="songTitle" destination="OxX-N0-XZp" id="t7P-7z-zYL"/>
                         <outlet property="webView" destination="VU1-IZ-jPU" id="cmi-y2-fS2"/>
                     </connections>
                 </viewController>

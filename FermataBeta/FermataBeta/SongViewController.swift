@@ -14,6 +14,9 @@ class SongViewController: UIViewController, UIWebViewDelegate, UITextFieldDelega
     
    // @IBOutlet weak var songLabelTitle: UILabel!
     @IBOutlet weak var webView: UIWebView!
+    @IBOutlet weak var songTitle: UINavigationBar!
+    @IBOutlet weak var songName: UILabel!
+    
     
    // let tableView = SongTableViewController.sharedInstance
     
@@ -21,13 +24,28 @@ class SongViewController: UIViewController, UIWebViewDelegate, UITextFieldDelega
     
     
     //This value is either passed by `SongTableViewController` in `prepareForSegue(_:sender:)
-    
     var song: Song?
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.navigationItem.title = song!.name
+        
+        /*print("before title " + self.navigationItem.title!)
+
+        self.navigationItem.title = song!.name
+        print("title" + self.navigationItem.title!)
+        print("what it should appear as" + song!.name)*/
+        //songTitle.delegate = self
+        /*print("before title" + self.title!)
+        self.title = song!.name
+*/
+        
+        // Set up views if editing an existing Meal.
+        if let song = song {
+            songName.text = song.name
+        }
         
         if let url = NSBundle.mainBundle().URLForResource("ReadMidiFile", withExtension: "html", subdirectory: "web"){
             let fragUrl = NSURL(string: "#FRAG_URL", relativeToURL: url)!

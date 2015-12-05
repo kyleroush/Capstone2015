@@ -44,7 +44,7 @@ class SongTableViewController: UITableViewController {
         //let data = try? NSString(contentsOfFile: path, encoding: NSUTF8StringEncoding)
         //let fileContent = try? NSString(contentsOfFile: loc, encoding: NSUTF8StringEncoding)
         
-        let my = NSBundle.mainBundle().URLForResource("test", withExtension: "js")!
+       /* let my = NSBundle.mainBundle().URLForResource("test", withExtension: "js")!
         let text = try! String(contentsOfURL: my, encoding: NSUTF8StringEncoding)
         print(text)
         
@@ -66,10 +66,10 @@ class SongTableViewController: UITableViewController {
         // get reference to hola() function
         let holaFunc = context.objectForKeyedSubscript("hola")
         // execute hola() function with parameter
-        let holaValue = holaFunc.callWithArguments(["Bobby"])
+        let holaValue = holaFunc.callWithArguments(["Bobby"])*/
         
-        print(helloValue) // print "Hello World!!!"
-        print(holaValue)  // print "Hola Bobby Cómo estás?"*/
+        //print(helloValue) // print "Hello World!!!"
+        //print(holaValue)  // print "Hola Bobby Cómo estás?"*/
         
         
  
