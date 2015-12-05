@@ -14,8 +14,23 @@ class SongTableViewController: UITableViewController {
     //MARK: Properties
     
     var songs = [Song]()
+    let songList: [String] = ["Fur Elise", "Moonlight Sonata", "Beethoven's Fifth Symphony"]
+    
+    class var sharedInstance: SongTableViewController {
+        struct Static {
+            static var instance: SongTableViewController?
+            static var token: dispatch_once_t = 0
+        }
+        
+        dispatch_once(&Static.token) {
+            Static.instance = SongTableViewController()
+        }
+        
+        return Static.instance!
+    }
+    
     func loadSampleSongs(){
-        let songList: [String] = ["Fur Elise", "Moonlight Sonata", "Beethoven's Fifth Symphony"]
+        
         
         for item in songList {
             songs += [Song(name: item)]
@@ -80,12 +95,10 @@ class SongTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return songs.count
     }
 
@@ -103,14 +116,27 @@ class SongTableViewController: UITableViewController {
         return cell
     }
     
-
-    /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
         return true
     }
-    */
+
+    // MARK: - Navigation
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showDetail" {
+            let songDetailViewController = segue.destinationViewController as! SongViewController
+            
+            // Get the cell that generated this segue.
+            if let selectedSongCell = sender as? SongTableViewCell {
+                let indexPath = tableView.indexPathForCell(selectedSongCell)!
+                let selectedSong = songs[indexPath.row]
+                songDetailViewController.song = selectedSong
+            }
+        }
+    }
 
     /*
     // Override to support editing the table view.
@@ -138,15 +164,4 @@ class SongTableViewController: UITableViewController {
         return true
     }
     */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
