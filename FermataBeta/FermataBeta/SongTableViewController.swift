@@ -13,9 +13,7 @@ import WebKit
 class SongTableViewController: UITableViewController {
     
     //MARK: Properties
-    
     var songs = [Song]()
-    //let songList: [String] = ["Fur Elise", "Moonlight Sonata", "Beethoven's Fifth Symphony"]
     
     class var sharedInstance: SongTableViewController {
         struct Static {
@@ -31,20 +29,15 @@ class SongTableViewController: UITableViewController {
     }
     
     func loadSampleSongs(){
-        
-        let contents: NSString = ""
+    
         if let url = NSURL(string: "http://people.eecs.ku.edu/~sbenson/grabTitles.php") {
             do {
-                let contents = try NSString(contentsOfURL: url, usedEncoding: nil)
-                print(contents)
-                let newContent = contents as! String
-                print("new contents:" + newContent)
+                let songListNP = try NSString(contentsOfURL: url, usedEncoding: nil)
+                let songListAsString = songListNP as String
+                let songList = songListAsString.characters.split{$0 == " "}.map(String.init)
                 
-                let contentArr = newContent.characters.split{$0 == " "}.map(String.init)
-                
-                print(contentArr)
-                
-                for item in contentArr {
+                //populate songList
+                for item in songList{
                     songs += [Song(name: item)]
                 }
                 
@@ -52,26 +45,8 @@ class SongTableViewController: UITableViewController {
                 print("contents could not be loaded")
             }
         } else {
-            // the URL was bad!
+            print("Contents are bad!")
         }
-        print(contents)
-        
-        //print("new content: " + newContent)
-        
-        
-       /* let fullName = "First Last"
-        let fullNameArr = fullName.characters.split{$0 == " "}.map(String.init)
-        
-        print(fullNameArr[1])*/
-        
-        
-        
-      
-
-        
-       /* for item in songList {
-            songs += [Song(name: item)]
-        }*/
  
     }
 
@@ -79,12 +54,6 @@ class SongTableViewController: UITableViewController {
         super.viewDidLoad()
         
         loadSampleSongs()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
     override func didReceiveMemoryWarning() {

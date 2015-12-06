@@ -15,12 +15,9 @@ class SongViewController: UIViewController, UIWebViewDelegate, UITextFieldDelega
     
     // @IBOutlet weak var songLabelTitle: UILabel!
     @IBOutlet weak var webView: UIWebView!
-    @IBOutlet weak var songTitle: UINavigationBar!
     @IBOutlet weak var songName: UILabel!
     
-    
     // let tableView = SongTableViewController.sharedInstance
-    
     //var songLabel = String()
     
     
@@ -31,20 +28,17 @@ class SongViewController: UIViewController, UIWebViewDelegate, UITextFieldDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationItem.title = song!.name
-        
         // Set up views if editing an existing Meal.
         if let song = song {
             songName.text = song.name
         }
         
+        //to call the html/javascript stuff
         if let url = NSBundle.mainBundle().URLForResource("MidiToVex", withExtension: "html", subdirectory: "MidiToVex"){
             let fragUrl = NSURL(string: "#FRAG_URL", relativeToURL: url)!
             let request = NSURLRequest(URL: fragUrl)
             webView.delegate = self
             webView.loadRequest(request)
-            //
-            
         }
         
         //let home = NSHomeDirectory()
