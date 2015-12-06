@@ -63,50 +63,46 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="VU1-IZ-jPU">
-                                <rect key="frame" x="0.0" y="72" width="600" height="528"/>
-                                <animations/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
-                                <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
-                            </webView>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OxX-N0-XZp">
-                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
-                                <animations/>
-                                <items>
-                                    <navigationItem id="vAE-g3-uPw">
-                                        <barButtonItem key="leftBarButtonItem" title="Back" id="N1b-5Y-Wg4">
-                                            <connections>
-                                                <segue destination="2Mw-gA-aZH" kind="show" id="mFJ-br-Mx6"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mhc-Kv-Wdh">
-                                <rect key="frame" x="188" y="72" width="252" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mhc-Kv-Wdh">
+                                <rect key="frame" x="220" y="72" width="252" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <navigationBar contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uX2-s4-UJf">
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                <animations/>
+                                <items>
+                                    <navigationItem id="Oky-8Y-S1o">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="SR6-5S-Jl8">
+                                            <connections>
+                                                <segue destination="2Mw-gA-aZH" kind="show" id="das-9e-Mfv"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <webView contentMode="center" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VU1-IZ-jPU">
+                                <rect key="frame" x="0.0" y="115" width="600" height="323"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                                <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                            </webView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="VU1-IZ-jPU" secondAttribute="trailing" constant="-20" id="G3y-md-PQZ"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="OxX-N0-XZp" secondAttribute="trailing" constant="-20" id="RU2-6b-vOl"/>
-                            <constraint firstItem="OxX-N0-XZp" firstAttribute="top" secondItem="38a-4n-eGC" secondAttribute="bottom" constant="8" id="ViS-j8-5L4"/>
-                            <constraint firstItem="VU1-IZ-jPU" firstAttribute="top" secondItem="OxX-N0-XZp" secondAttribute="bottom" id="Vk7-0Y-juU"/>
-                            <constraint firstItem="VU1-IZ-jPU" firstAttribute="leading" secondItem="u1l-al-IfP" secondAttribute="leadingMargin" constant="-20" id="Yas-zM-xqF"/>
-                            <constraint firstItem="OxX-N0-XZp" firstAttribute="leading" secondItem="u1l-al-IfP" secondAttribute="leadingMargin" constant="-20" id="bRy-Bj-XKv"/>
+                            <constraint firstItem="VU1-IZ-jPU" firstAttribute="top" secondItem="mhc-Kv-Wdh" secondAttribute="bottom" constant="22" id="N2z-vZ-5b0"/>
+                            <constraint firstItem="U84-Yd-Knx" firstAttribute="top" secondItem="VU1-IZ-jPU" secondAttribute="bottom" id="bdy-BO-e0f"/>
+                            <constraint firstItem="uX2-s4-UJf" firstAttribute="leading" secondItem="u1l-al-IfP" secondAttribute="leadingMargin" constant="-20" id="eUS-Xx-7jO"/>
                             <constraint firstItem="U84-Yd-Knx" firstAttribute="top" secondItem="VU1-IZ-jPU" secondAttribute="bottom" id="hwi-0h-T13"/>
-                            <constraint firstItem="VU1-IZ-jPU" firstAttribute="top" secondItem="OxX-N0-XZp" secondAttribute="bottom" id="nSU-0t-Hsy"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="uX2-s4-UJf" secondAttribute="trailing" constant="-20" id="iJJ-20-5BS"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="SongTitle" id="NjJ-Ls-C2b"/>
                     <connections>
                         <outlet property="songName" destination="mhc-Kv-Wdh" id="PLL-Ml-K0N"/>
-                        <outlet property="songTitle" destination="OxX-N0-XZp" id="t7P-7z-zYL"/>
                         <outlet property="webView" destination="VU1-IZ-jPU" id="cmi-y2-fS2"/>
                     </connections>
                 </viewController>

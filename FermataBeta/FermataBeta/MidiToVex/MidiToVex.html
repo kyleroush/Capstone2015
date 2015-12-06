@@ -7,7 +7,7 @@
 	<script src="JZZ.Midi.js"></script>
 	<script src="JZZ.MidiFile.js"></script>
 	<script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
-	
+	<h1 id=heres>HELLO</h1>
 	<style type="text/css">
 	button {
 		width:6em;
@@ -117,6 +117,8 @@ function fromFile()
 
 function readMidiFile(s)
 {
+    alert("HI!")
+    $(#heres).append("heres")
 	try
 	{
 		var mf = new JZZ.MidiFile(s)
