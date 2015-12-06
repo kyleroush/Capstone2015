@@ -28,6 +28,7 @@
 		DB9AEA901BF6D6AC00506C24 /* FermataBetaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9AEA8F1BF6D6AC00506C24 /* FermataBetaTests.swift */; };
 		DB9AEA9B1BF6D6AC00506C24 /* FermataBetaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9AEA9A1BF6D6AC00506C24 /* FermataBetaUITests.swift */; };
 		DBAD8C251C03D42F0049484B /* test.js in Resources */ = {isa = PBXBuildFile; fileRef = DBAD8C241C03D42F0049484B /* test.js */; };
+		DBF841F61C137767002D9729 /* MidiToVex in Resources */ = {isa = PBXBuildFile; fileRef = DBF841F51C137767002D9729 /* MidiToVex */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		DB9AEA9A1BF6D6AC00506C24 /* FermataBetaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FermataBetaUITests.swift; sourceTree = "<group>"; };
 		DB9AEA9C1BF6D6AC00506C24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DBAD8C241C03D42F0049484B /* test.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = test.js; path = ../../test.js; sourceTree = "<group>"; };
+		DBF841F51C137767002D9729 /* MidiToVex */ = {isa = PBXFileReference; lastKnownFileType = folder; path = MidiToVex; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 		DB9AEA791BF6D6AC00506C24 /* FermataBeta */ = {
 			isa = PBXGroup;
 			children = (
+				DBF841F51C137767002D9729 /* MidiToVex */,
 				DB6188BE1C07B47A002D9D97 /* web */,
 				DB9AEA7A1BF6D6AC00506C24 /* AppDelegate.swift */,
 				DBAD8C241C03D42F0049484B /* test.js */,
@@ -259,6 +262,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DBF841F61C137767002D9729 /* MidiToVex in Resources */,
 				DB6188BF1C07B47A002D9D97 /* web in Resources */,
 				DB9AEA851BF6D6AC00506C24 /* LaunchScreen.storyboard in Resources */,
 				DB9AEA821BF6D6AC00506C24 /* Assets.xcassets in Resources */,

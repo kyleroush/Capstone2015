@@ -7,18 +7,19 @@
 //
 
 import UIKit
+import JavaScriptCore
 
 class SongViewController: UIViewController, UIWebViewDelegate, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     //Mark Properties
     
-   // @IBOutlet weak var songLabelTitle: UILabel!
+    // @IBOutlet weak var songLabelTitle: UILabel!
     @IBOutlet weak var webView: UIWebView!
     @IBOutlet weak var songTitle: UINavigationBar!
     @IBOutlet weak var songName: UILabel!
     
     
-   // let tableView = SongTableViewController.sharedInstance
+    // let tableView = SongTableViewController.sharedInstance
     
     //var songLabel = String()
     
@@ -32,28 +33,71 @@ class SongViewController: UIViewController, UIWebViewDelegate, UITextFieldDelega
         
         self.navigationItem.title = song!.name
         
-        /*print("before title " + self.navigationItem.title!)
-
-        self.navigationItem.title = song!.name
-        print("title" + self.navigationItem.title!)
-        print("what it should appear as" + song!.name)*/
-        //songTitle.delegate = self
-        /*print("before title" + self.title!)
-        self.title = song!.name
-*/
-        
         // Set up views if editing an existing Meal.
         if let song = song {
             songName.text = song.name
         }
         
-        if let url = NSBundle.mainBundle().URLForResource("ReadMidiFile", withExtension: "html", subdirectory: "web"){
+        if let url = NSBundle.mainBundle().URLForResource("MidiToVex", withExtension: "html", subdirectory: "MidiToVex"){
             let fragUrl = NSURL(string: "#FRAG_URL", relativeToURL: url)!
             let request = NSURLRequest(URL: fragUrl)
             webView.delegate = self
             webView.loadRequest(request)
             //
+            
         }
+        
+        //let home = NSHomeDirectory()
+        // load javascript file in String
+        //let jsSource = try? String(contentsOfFile: "/test.js", encoding: NSUTF8StringEncoding)
+        
+        //let path = NSBundle.mainBundle().pathForResource("test", ofType: "js")
+        //let data = try? NSString(contentsOfFile: path, encoding: NSUTF8StringEncoding)
+        //let fileContent = try? NSString(contentsOfFile: loc, encoding: NSUTF8StringEncoding)
+        
+        let my = NSBundle.mainBundle().URLForResource("JZZ.Midi", withExtension: "js", subdirectory: "midiToVex")!
+        let text = try! String(contentsOfURL: my, encoding: NSUTF8StringEncoding)
+        //print(text)
+        
+        //print(fileContent)
+        
+        // create a javascript context environment and evaluate script
+        let context = JSContext()
+        context.evaluateScript(text)
+        
+        //context.evaluateScript("var num = 5 +5")
+        //let output: JSValue = context.evaluateScript("num")
+        //print(output)
+        
+        // get reference to hello() function
+        //let helloFunc = context.objectForKeyedSubscript("hello")
+        // execute hello() function with parameter
+        //let helloValue = helloFunc.callWithArguments(["World!!!"])
+        
+        // get reference to hola() function
+        //let holaFunc = context.objectForKeyedSubscript("hola")
+        // execute hola() function with parameter
+        //let holaValue = holaFunc.callWithArguments(["Bobby"])
+        
+        //all these didn't work
+        /*  NSUTF16LittleEndianStringEncoding
+            NSUTF16StringEncoding 
+            NSUTF32BigEndianStringEncoding 
+            NSUTF32LittleEndianStringEncodings
+            NSUTF32StringEncoding NSUTF8StringEncoding */
+   
+       //let some = NSBundle.mainBundle().URLForResource("no_notes4_gap4", withExtension: "js", subdirectory: "midiToVex")!
+        //let midiFile = try! String(contentsOfURL: some, encoding: NSUTF8StringEncoding)
+        //print(midiFile)
+        
+    }
+    
+    func webViewDidFinishLoad(webView: UIWebView) {
+        
+       /* let jsPath = NSBundle.mainBundle().URLForResource("JZZ.Midi", withExtension: ", subdirectory: <#T##String?#>)("JZZ.Midi", ofType: "js")
+        let jsContent = NSString(contentsOfFile: jsPath!, encoding: NSUTF8StringEncoding, error: nil) as! String
+        
+        webView.stringByEvaluatingJavaScriptFromString(jsContent)*/
     }
     
     override func didReceiveMemoryWarning() {

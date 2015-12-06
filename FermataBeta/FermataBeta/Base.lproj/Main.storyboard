@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Songs-->
@@ -62,13 +63,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView contentMode="center" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VU1-IZ-jPU">
-                                <rect key="frame" x="188" y="212" width="240" height="335"/>
+                            <webView contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="VU1-IZ-jPU">
+                                <rect key="frame" x="0.0" y="72" width="600" height="528"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
                                 <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                             </webView>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OxX-N0-XZp">
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OxX-N0-XZp">
                                 <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                 <animations/>
                                 <items>
@@ -82,7 +83,7 @@
                                 </items>
                             </navigationBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mhc-Kv-Wdh">
-                                <rect key="frame" x="188" y="39" width="252" height="21"/>
+                                <rect key="frame" x="188" y="72" width="252" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -91,6 +92,16 @@
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="VU1-IZ-jPU" secondAttribute="trailing" constant="-20" id="G3y-md-PQZ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="OxX-N0-XZp" secondAttribute="trailing" constant="-20" id="RU2-6b-vOl"/>
+                            <constraint firstItem="OxX-N0-XZp" firstAttribute="top" secondItem="38a-4n-eGC" secondAttribute="bottom" constant="8" id="ViS-j8-5L4"/>
+                            <constraint firstItem="VU1-IZ-jPU" firstAttribute="top" secondItem="OxX-N0-XZp" secondAttribute="bottom" id="Vk7-0Y-juU"/>
+                            <constraint firstItem="VU1-IZ-jPU" firstAttribute="leading" secondItem="u1l-al-IfP" secondAttribute="leadingMargin" constant="-20" id="Yas-zM-xqF"/>
+                            <constraint firstItem="OxX-N0-XZp" firstAttribute="leading" secondItem="u1l-al-IfP" secondAttribute="leadingMargin" constant="-20" id="bRy-Bj-XKv"/>
+                            <constraint firstItem="U84-Yd-Knx" firstAttribute="top" secondItem="VU1-IZ-jPU" secondAttribute="bottom" id="hwi-0h-T13"/>
+                            <constraint firstItem="VU1-IZ-jPU" firstAttribute="top" secondItem="OxX-N0-XZp" secondAttribute="bottom" id="nSU-0t-Hsy"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="SongTitle" id="NjJ-Ls-C2b"/>
                     <connections>
