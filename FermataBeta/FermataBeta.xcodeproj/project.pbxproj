@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DB37E11B1C570C50006D70C1 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB37E11A1C570C50006D70C1 /* ContainerViewController.swift */; };
 		DB3FBBD31BF824C4004C22A3 /* Genre.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3FBBD21BF824C4004C22A3 /* Genre.swift */; };
 		DB3FBBD41BF824C4004C22A3 /* Genre.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3FBBD21BF824C4004C22A3 /* Genre.swift */; };
 		DB3FBBD61BF8275A004C22A3 /* GenreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3FBBD51BF8275A004C22A3 /* GenreTableViewController.swift */; };
@@ -20,6 +21,7 @@
 		DB3FBBE81BFA936A004C22A3 /* SongTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3FBBE71BFA936A004C22A3 /* SongTableViewController.swift */; };
 		DB3FBBE91BFA936A004C22A3 /* SongTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3FBBE71BFA936A004C22A3 /* SongTableViewController.swift */; };
 		DB6188BF1C07B47A002D9D97 /* web in Resources */ = {isa = PBXBuildFile; fileRef = DB6188BE1C07B47A002D9D97 /* web */; };
+		DB87B45D1C16108000AF7476 /* stuff.txt in Resources */ = {isa = PBXBuildFile; fileRef = DB87B45C1C16108000AF7476 /* stuff.txt */; };
 		DB9AEA7B1BF6D6AC00506C24 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9AEA7A1BF6D6AC00506C24 /* AppDelegate.swift */; };
 		DB9AEA7D1BF6D6AC00506C24 /* SongViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9AEA7C1BF6D6AC00506C24 /* SongViewController.swift */; };
 		DB9AEA801BF6D6AC00506C24 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB9AEA7E1BF6D6AC00506C24 /* Main.storyboard */; };
@@ -29,6 +31,9 @@
 		DB9AEA9B1BF6D6AC00506C24 /* FermataBetaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9AEA9A1BF6D6AC00506C24 /* FermataBetaUITests.swift */; };
 		DBAD8C251C03D42F0049484B /* test.js in Resources */ = {isa = PBXBuildFile; fileRef = DBAD8C241C03D42F0049484B /* test.js */; };
 		DBF841F61C137767002D9729 /* MidiToVex in Resources */ = {isa = PBXBuildFile; fileRef = DBF841F51C137767002D9729 /* MidiToVex */; };
+		DBFB28131C5A781800999BE0 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBFB28121C5A781800999BE0 /* SWRevealViewController.m */; };
+		DBFB28151C5A791A00999BE0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFB28141C5A791A00999BE0 /* ViewController.swift */; };
+		DBFB281E1C5C024F00999BE0 /* BackTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFB281D1C5C024F00999BE0 /* BackTableVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +54,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DB37E11A1C570C50006D70C1 /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
 		DB3FBBD21BF824C4004C22A3 /* Genre.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Genre.swift; sourceTree = "<group>"; };
 		DB3FBBD51BF8275A004C22A3 /* GenreTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenreTableViewController.swift; sourceTree = "<group>"; };
 		DB3FBBD81BF8297A004C22A3 /* GenreTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenreTableViewCell.swift; sourceTree = "<group>"; };
@@ -56,6 +62,7 @@
 		DB3FBBE41BFA9195004C22A3 /* SongTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongTableViewCell.swift; sourceTree = "<group>"; };
 		DB3FBBE71BFA936A004C22A3 /* SongTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongTableViewController.swift; sourceTree = "<group>"; };
 		DB6188BE1C07B47A002D9D97 /* web */ = {isa = PBXFileReference; lastKnownFileType = folder; path = web; sourceTree = "<group>"; };
+		DB87B45C1C16108000AF7476 /* stuff.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = stuff.txt; path = MidiToVex/stuff.txt; sourceTree = "<group>"; };
 		DB9AEA771BF6D6AC00506C24 /* FermataBeta.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FermataBeta.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB9AEA7A1BF6D6AC00506C24 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DB9AEA7C1BF6D6AC00506C24 /* SongViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongViewController.swift; sourceTree = "<group>"; };
@@ -71,6 +78,11 @@
 		DB9AEA9C1BF6D6AC00506C24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DBAD8C241C03D42F0049484B /* test.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = test.js; path = ../../test.js; sourceTree = "<group>"; };
 		DBF841F51C137767002D9729 /* MidiToVex */ = {isa = PBXFileReference; lastKnownFileType = folder; path = MidiToVex; sourceTree = "<group>"; };
+		DBFB28101C5A781700999BE0 /* FermataBeta-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FermataBeta-Bridging-Header.h"; sourceTree = "<group>"; };
+		DBFB28111C5A781800999BE0 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		DBFB28121C5A781800999BE0 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		DBFB28141C5A791A00999BE0 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DBFB281D1C5C024F00999BE0 /* BackTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackTableVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,15 +136,20 @@
 				DBF841F51C137767002D9729 /* MidiToVex */,
 				DB6188BE1C07B47A002D9D97 /* web */,
 				DB9AEA7A1BF6D6AC00506C24 /* AppDelegate.swift */,
+				DB87B45C1C16108000AF7476 /* stuff.txt */,
 				DBAD8C241C03D42F0049484B /* test.js */,
 				DB3FBBD51BF8275A004C22A3 /* GenreTableViewController.swift */,
 				DB3FBBDB1BF94B64004C22A3 /* Song.swift */,
 				DB3FBBD81BF8297A004C22A3 /* GenreTableViewCell.swift */,
 				DB9AEA7C1BF6D6AC00506C24 /* SongViewController.swift */,
+				DB37E11A1C570C50006D70C1 /* ContainerViewController.swift */,
 				DB9AEA7E1BF6D6AC00506C24 /* Main.storyboard */,
+				DBFB281D1C5C024F00999BE0 /* BackTableVC.swift */,
 				DB3FBBE71BFA936A004C22A3 /* SongTableViewController.swift */,
+				DBFB28141C5A791A00999BE0 /* ViewController.swift */,
 				DB3FBBE41BFA9195004C22A3 /* SongTableViewCell.swift */,
 				DB9AEA811BF6D6AC00506C24 /* Assets.xcassets */,
+				DBFB280F1C5A77EC00999BE0 /* Supporting Files */,
 				DB9AEA831BF6D6AC00506C24 /* LaunchScreen.storyboard */,
 				DB3FBBD21BF824C4004C22A3 /* Genre.swift */,
 				DB9AEA861BF6D6AC00506C24 /* Info.plist */,
@@ -156,6 +173,16 @@
 				DB9AEA9C1BF6D6AC00506C24 /* Info.plist */,
 			);
 			path = FermataBetaUITests;
+			sourceTree = "<group>";
+		};
+		DBFB280F1C5A77EC00999BE0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DBFB28111C5A781800999BE0 /* SWRevealViewController.h */,
+				DBFB28121C5A781800999BE0 /* SWRevealViewController.m */,
+				DBFB28101C5A781700999BE0 /* FermataBeta-Bridging-Header.h */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -220,7 +247,7 @@
 		DB9AEA6F1BF6D6AC00506C24 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0710;
+				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = "Young Liu";
 				TargetAttributes = {
@@ -262,6 +289,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB87B45D1C16108000AF7476 /* stuff.txt in Resources */,
 				DBF841F61C137767002D9729 /* MidiToVex in Resources */,
 				DB6188BF1C07B47A002D9D97 /* web in Resources */,
 				DB9AEA851BF6D6AC00506C24 /* LaunchScreen.storyboard in Resources */,
@@ -294,11 +322,15 @@
 			files = (
 				DB3FBBDC1BF94B64004C22A3 /* Song.swift in Sources */,
 				DB3FBBD31BF824C4004C22A3 /* Genre.swift in Sources */,
+				DBFB281E1C5C024F00999BE0 /* BackTableVC.swift in Sources */,
 				DB3FBBD61BF8275A004C22A3 /* GenreTableViewController.swift in Sources */,
 				DB3FBBE51BFA9195004C22A3 /* SongTableViewCell.swift in Sources */,
+				DBFB28151C5A791A00999BE0 /* ViewController.swift in Sources */,
 				DB3FBBD91BF8297A004C22A3 /* GenreTableViewCell.swift in Sources */,
 				DB9AEA7D1BF6D6AC00506C24 /* SongViewController.swift in Sources */,
 				DB3FBBE81BFA936A004C22A3 /* SongTableViewController.swift in Sources */,
+				DBFB28131C5A781800999BE0 /* SWRevealViewController.m in Sources */,
+				DB37E11B1C570C50006D70C1 /* ContainerViewController.swift in Sources */,
 				DB9AEA7B1BF6D6AC00506C24 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -447,10 +479,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = FermataBeta/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.FermataBeta;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "FermataBeta/FermataBeta-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -458,10 +493,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = FermataBeta/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.FermataBeta;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "FermataBeta/FermataBeta-Bridging-Header.h";
 			};
 			name = Release;
 		};

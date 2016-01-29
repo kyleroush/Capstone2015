@@ -7,7 +7,6 @@
 	<script src="JZZ.Midi.js"></script>
 	<script src="JZZ.MidiFile.js"></script>
 	<script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
-	<h1 id=heres>HELLO</h1>
 	<style type="text/css">
 	button {
 		width:6em;
@@ -71,6 +70,7 @@
 	var STAFF_OFFSET_Y_CENTER = (CANVAS_HEIGHT - 120) / 2
 </script>
 
+
 <!-- Necessary, Hidden Divisions -->
 <div style="display: none;" id=fname>&nbsp;</div>
 <div style="display: none;" id=midi>Files accepted: SMF (*.mid, *.kar), RMID (*.rmi)</div>
@@ -78,9 +78,7 @@
 <p><input type=file id=file size=80 onchange='fromFile()' /></p>
 
 <!-- Create canvas -->
-<script>
-	document.write('<p><canvas width=' + (CANVAS_WIDTH+25) + ' height=' + CANVAS_HEIGHT + '></canvas></p>')
-</script>
+
 
 <!-- ReadMidiFile -->
 <script>
@@ -118,7 +116,7 @@ function fromFile()
 function readMidiFile(s)
 {
     alert("HI!")
-    $(#heres).append("heres")
+    //$(#heres).append("heres")
 	try
 	{
 		var mf = new JZZ.MidiFile(s)
@@ -128,6 +126,11 @@ function readMidiFile(s)
 	}
 	catch(e)
 		{err(e)}
+}
+
+function myJSFunction(a){
+    alert(a);
+    return true;
 }
 
 function displayMidiFile(mf)

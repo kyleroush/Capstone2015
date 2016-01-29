@@ -28,6 +28,12 @@ class SongTableViewController: UITableViewController {
         return Static.instance!
     }
     
+    func getDocumentDirectory() -> NSString {
+        let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
+        let documentsDirectory = paths[0]
+        return documentsDirectory
+    }
+    
     func loadSampleSongs(){
     
         if let url = NSURL(string: "http://people.eecs.ku.edu/~sbenson/grabTitles.php") {
@@ -47,7 +53,7 @@ class SongTableViewController: UITableViewController {
         } else {
             print("Contents are bad!")
         }
- 
+
     }
 
     override func viewDidLoad() {
