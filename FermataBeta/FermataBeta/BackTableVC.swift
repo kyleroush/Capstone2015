@@ -13,7 +13,7 @@ class BackTableVC: UITableViewController {
     var MenuItems = [String]()
     
     override func viewDidLoad() {
-            MenuItems = ["Recent", "Music", "Smart Features"]
+            MenuItems = ["Recent", "Songs", "Metronome", "Tuner"]
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -23,7 +23,7 @@ class BackTableVC: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let block = tableView.dequeueReusableCellWithIdentifier("block", forIndexPath: indexPath) as UITableViewCell
+        let block = tableView.dequeueReusableCellWithIdentifier(MenuItems[indexPath.row], forIndexPath: indexPath) as UITableViewCell
     
         block.textLabel?.text = MenuItems[indexPath.row]
         

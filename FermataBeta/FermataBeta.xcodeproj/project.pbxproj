@@ -34,6 +34,7 @@
 		DBFB28131C5A781800999BE0 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBFB28121C5A781800999BE0 /* SWRevealViewController.m */; };
 		DBFB28151C5A791A00999BE0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFB28141C5A791A00999BE0 /* ViewController.swift */; };
 		DBFB281E1C5C024F00999BE0 /* BackTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFB281D1C5C024F00999BE0 /* BackTableVC.swift */; };
+		DBFB28201C5D0ECA00999BE0 /* Recent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFB281F1C5D0ECA00999BE0 /* Recent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,7 @@
 		DBFB28121C5A781800999BE0 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		DBFB28141C5A791A00999BE0 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DBFB281D1C5C024F00999BE0 /* BackTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackTableVC.swift; sourceTree = "<group>"; };
+		DBFB281F1C5D0ECA00999BE0 /* Recent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +146,7 @@
 				DB9AEA7C1BF6D6AC00506C24 /* SongViewController.swift */,
 				DB37E11A1C570C50006D70C1 /* ContainerViewController.swift */,
 				DB9AEA7E1BF6D6AC00506C24 /* Main.storyboard */,
+				DBFB281F1C5D0ECA00999BE0 /* Recent.swift */,
 				DBFB281D1C5C024F00999BE0 /* BackTableVC.swift */,
 				DB3FBBE71BFA936A004C22A3 /* SongTableViewController.swift */,
 				DBFB28141C5A791A00999BE0 /* ViewController.swift */,
@@ -321,6 +324,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB3FBBDC1BF94B64004C22A3 /* Song.swift in Sources */,
+				DBFB28201C5D0ECA00999BE0 /* Recent.swift in Sources */,
 				DB3FBBD31BF824C4004C22A3 /* Genre.swift in Sources */,
 				DBFB281E1C5C024F00999BE0 /* BackTableVC.swift in Sources */,
 				DB3FBBD61BF8275A004C22A3 /* GenreTableViewController.swift in Sources */,
