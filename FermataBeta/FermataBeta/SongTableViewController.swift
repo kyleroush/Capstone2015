@@ -12,21 +12,11 @@ import WebKit
 
 class SongTableViewController: UITableViewController {
     
+    
+    @IBOutlet var Menu: UIBarButtonItem!
+    
     //MARK: Properties
     var songs = [Song]()
-    
-    class var sharedInstance: SongTableViewController {
-        struct Static {
-            static var instance: SongTableViewController?
-            static var token: dispatch_once_t = 0
-        }
-        
-        dispatch_once(&Static.token) {
-            Static.instance = SongTableViewController()
-        }
-        
-        return Static.instance!
-    }
     
     func getDocumentDirectory() -> NSString {
         let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
@@ -58,6 +48,8 @@ class SongTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         
         loadSampleSongs()
     }

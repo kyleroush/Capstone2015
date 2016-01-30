@@ -35,6 +35,8 @@
 		DBFB28151C5A791A00999BE0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFB28141C5A791A00999BE0 /* ViewController.swift */; };
 		DBFB281E1C5C024F00999BE0 /* BackTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFB281D1C5C024F00999BE0 /* BackTableVC.swift */; };
 		DBFB28201C5D0ECA00999BE0 /* Recent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFB281F1C5D0ECA00999BE0 /* Recent.swift */; };
+		DBFB28221C5D132400999BE0 /* Metronome.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFB28211C5D132400999BE0 /* Metronome.swift */; };
+		DBFB28241C5D133000999BE0 /* Tuner.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFB28231C5D133000999BE0 /* Tuner.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +87,8 @@
 		DBFB28141C5A791A00999BE0 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DBFB281D1C5C024F00999BE0 /* BackTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackTableVC.swift; sourceTree = "<group>"; };
 		DBFB281F1C5D0ECA00999BE0 /* Recent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recent.swift; sourceTree = "<group>"; };
+		DBFB28211C5D132400999BE0 /* Metronome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Metronome.swift; sourceTree = "<group>"; };
+		DBFB28231C5D133000999BE0 /* Tuner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tuner.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +151,8 @@
 				DB37E11A1C570C50006D70C1 /* ContainerViewController.swift */,
 				DB9AEA7E1BF6D6AC00506C24 /* Main.storyboard */,
 				DBFB281F1C5D0ECA00999BE0 /* Recent.swift */,
+				DBFB28211C5D132400999BE0 /* Metronome.swift */,
+				DBFB28231C5D133000999BE0 /* Tuner.swift */,
 				DBFB281D1C5C024F00999BE0 /* BackTableVC.swift */,
 				DB3FBBE71BFA936A004C22A3 /* SongTableViewController.swift */,
 				DBFB28141C5A791A00999BE0 /* ViewController.swift */,
@@ -333,8 +339,10 @@
 				DB3FBBD91BF8297A004C22A3 /* GenreTableViewCell.swift in Sources */,
 				DB9AEA7D1BF6D6AC00506C24 /* SongViewController.swift in Sources */,
 				DB3FBBE81BFA936A004C22A3 /* SongTableViewController.swift in Sources */,
+				DBFB28221C5D132400999BE0 /* Metronome.swift in Sources */,
 				DBFB28131C5A781800999BE0 /* SWRevealViewController.m in Sources */,
 				DB37E11B1C570C50006D70C1 /* ContainerViewController.swift in Sources */,
+				DBFB28241C5D133000999BE0 /* Tuner.swift in Sources */,
 				DB9AEA7B1BF6D6AC00506C24 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
