@@ -17,12 +17,6 @@ class SongTableViewController: UITableViewController {
     //MARK: Properties
     var songs = [Song]()
     
-    func getDocumentDirectory() -> NSString {
-        let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
-        let documentsDirectory = paths[0]
-        return documentsDirectory
-    }
-    
     func loadSampleSongs(){
     
         if let url = NSURL(string: "http://people.eecs.ku.edu/~sbenson/grabTitles.php") {
@@ -44,12 +38,17 @@ class SongTableViewController: UITableViewController {
         }
 
     }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    
+    func swipe(){
         
+        //allows the right wipe
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         
+    }
+
+    override func viewDidLoad() {
+        //super.viewDidLoad()
+        swipe()
         loadSampleSongs()
     }
 

@@ -10,22 +10,23 @@ import Foundation
 import UIKit
 import WebKit
 
-class SongViewController: UIViewController, UIWebViewDelegate, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate  {
+class SongViewController: UIViewController, UIWebViewDelegate {
     
     //Mark Properties
     
     // @IBOutlet weak var songLabelTitle: UILabel!
     @IBOutlet weak var webView: UIWebView!
-    @IBOutlet weak var songName: UILabel!
     var myWebView: WKWebView?
     
     
     //This value is either passed by `SongTableViewController` in `prepareForSegue(_:sender:)
     var song: Song?
     
-    func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool {
+    /*func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool {
         let param = "hello"
         webView.stringByEvaluatingJavaScriptFromString("myJSFunction('\(param)')")
+        
+       // webView.stringByEvaluatingJavaScriptFromString("")
         
         NSLog("request: \(request)")
         
@@ -43,20 +44,25 @@ class SongViewController: UIViewController, UIWebViewDelegate, UITextFieldDelega
         }
         
         return true
+    }*/
+    
+    override func viewWillAppear(animated: Bool) {
+        webView.stringByEvaluatingJavaScriptFromString("thisIsDumb()")
     }
     
     override func viewDidLoad() {
         //super.viewDidLoad()
         
-        
         // Set up views if editing an existing Meal.
-        if let song = song {
+        /*if let song = song {
             songName.text = song.name
-        }
+        }*/
         
         // Do any additional setup after loading the view, typically from a nib.
-        //let urlDiff = "http://people.eecs.ku.edu/~kroush/MidiToVex/MidiToVex.html";
-        if let url = NSURL (string: "http://people.eecs.ku.edu/~kroush/MidiToVex/MidiToVex.html")
+        
+        // goes to different songs now (hopefully)
+        let webString = "http://people.eecs.ku.edu/~kroush/MidiToVex/MidiToVex.html?song=" + song!.name
+        if let url = NSURL (string: webString)
         {
             let requestObj = NSURLRequest(URL: url)
             webView.loadRequest(requestObj)
@@ -65,6 +71,7 @@ class SongViewController: UIViewController, UIWebViewDelegate, UITextFieldDelega
     }
     
     func webViewDidFinishLoad(webView: UIWebView) {
+        //webView.stringByEvaluatingJavaScriptFromString("thisIsDumb()")
         
     }
     
