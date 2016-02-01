@@ -29,6 +29,8 @@
 		DB9AEA851BF6D6AC00506C24 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB9AEA831BF6D6AC00506C24 /* LaunchScreen.storyboard */; };
 		DB9AEA901BF6D6AC00506C24 /* FermataBetaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9AEA8F1BF6D6AC00506C24 /* FermataBetaTests.swift */; };
 		DB9AEA9B1BF6D6AC00506C24 /* FermataBetaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9AEA9A1BF6D6AC00506C24 /* FermataBetaUITests.swift */; };
+		DBE469C31C5FF13100677299 /* ahem_x.wav in Resources */ = {isa = PBXBuildFile; fileRef = DBE469C21C5FF13100677299 /* ahem_x.wav */; };
+		DBE469C51C60202600677299 /* Piano.mf.C1.wav in Resources */ = {isa = PBXBuildFile; fileRef = DBE469C41C60202600677299 /* Piano.mf.C1.wav */; };
 		DBF841F61C137767002D9729 /* MidiToVex in Resources */ = {isa = PBXBuildFile; fileRef = DBF841F51C137767002D9729 /* MidiToVex */; };
 		DBFB28131C5A781800999BE0 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBFB28121C5A781800999BE0 /* SWRevealViewController.m */; };
 		DBFB28151C5A791A00999BE0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFB28141C5A791A00999BE0 /* ViewController.swift */; };
@@ -78,6 +80,8 @@
 		DB9AEA961BF6D6AC00506C24 /* FermataBetaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FermataBetaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB9AEA9A1BF6D6AC00506C24 /* FermataBetaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FermataBetaUITests.swift; sourceTree = "<group>"; };
 		DB9AEA9C1BF6D6AC00506C24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DBE469C21C5FF13100677299 /* ahem_x.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ahem_x.wav; sourceTree = "<group>"; };
+		DBE469C41C60202600677299 /* Piano.mf.C1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Piano.mf.C1.wav; sourceTree = "<group>"; };
 		DBF841F51C137767002D9729 /* MidiToVex */ = {isa = PBXFileReference; lastKnownFileType = folder; path = MidiToVex; sourceTree = "<group>"; };
 		DBFB28101C5A781700999BE0 /* FermataBeta-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FermataBeta-Bridging-Header.h"; sourceTree = "<group>"; };
 		DBFB28111C5A781800999BE0 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
@@ -145,6 +149,8 @@
 				DB3FBBDB1BF94B64004C22A3 /* Song.swift */,
 				DB3FBBD81BF8297A004C22A3 /* GenreTableViewCell.swift */,
 				DB9AEA7C1BF6D6AC00506C24 /* SongViewController.swift */,
+				DBE469C21C5FF13100677299 /* ahem_x.wav */,
+				DBE469C41C60202600677299 /* Piano.mf.C1.wav */,
 				DB3FBBE71BFA936A004C22A3 /* SongTableViewController.swift */,
 				DB37E11A1C570C50006D70C1 /* ContainerViewController.swift */,
 				DB9AEA7E1BF6D6AC00506C24 /* Main.storyboard */,
@@ -296,9 +302,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB87B45D1C16108000AF7476 /* stuff.txt in Resources */,
+				DBE469C31C5FF13100677299 /* ahem_x.wav in Resources */,
 				DBF841F61C137767002D9729 /* MidiToVex in Resources */,
 				DB6188BF1C07B47A002D9D97 /* web in Resources */,
 				DB9AEA851BF6D6AC00506C24 /* LaunchScreen.storyboard in Resources */,
+				DBE469C51C60202600677299 /* Piano.mf.C1.wav in Resources */,
 				DB9AEA821BF6D6AC00506C24 /* Assets.xcassets in Resources */,
 				DB9AEA801BF6D6AC00506C24 /* Main.storyboard in Resources */,
 			);

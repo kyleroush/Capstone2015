@@ -18,33 +18,8 @@ class SongViewController: UIViewController, UIWebViewDelegate {
     @IBOutlet weak var webView: UIWebView!
     var myWebView: WKWebView?
     
-    
     //This value is either passed by `SongTableViewController` in `prepareForSegue(_:sender:)
     var song: Song?
-    
-    /*func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool {
-        let param = "hello"
-        webView.stringByEvaluatingJavaScriptFromString("myJSFunction('\(param)')")
-        
-       // webView.stringByEvaluatingJavaScriptFromString("")
-        
-        NSLog("request: \(request)")
-        
-        if let scheme = request.URL?.scheme {
-            if scheme == "mike" {
-                //now we can react
-                
-                NSLog("we got a mike request: \(scheme)")
-                
-                let param = "hello"
-                webView.stringByEvaluatingJavaScriptFromString("myJSFunction('\(param)')")
-                
-                return false
-            }
-        }
-        
-        return true
-    }*/
     
     override func viewWillAppear(animated: Bool) {
         webView.stringByEvaluatingJavaScriptFromString("thisIsDumb()")
@@ -67,11 +42,6 @@ class SongViewController: UIViewController, UIWebViewDelegate {
             let requestObj = NSURLRequest(URL: url)
             webView.loadRequest(requestObj)
         }
-        
-    }
-    
-    func webViewDidFinishLoad(webView: UIWebView) {
-        //webView.stringByEvaluatingJavaScriptFromString("thisIsDumb()")
         
     }
     
