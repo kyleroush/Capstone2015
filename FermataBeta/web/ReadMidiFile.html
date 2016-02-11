@@ -139,25 +139,201 @@ function fromString(){
  readMidiFile(JZZ.MidiFile.fromBase64(b64));
 }
 function fromPassedString(s){
- plzWait();
- fName('Base64 string');
- readMidiFile(JZZ.MidiFile.fromBase64(s));
+  plzWait();
+  fName('Base64 string');
+  readMidiFile(JZZ.MidiFile.fromBase64(s));
 }
+
+//takes a midi file that has been parsed into a 64 bit string and generates sheet music
 function readMidiFile(s)
 {
-console.log(s)
+  console.log(s)
 	try
 	{
 
-		var mf = new JZZ.MidiFile(s)
-		console.log(mf)
-		var outMeasures = displayMidiFile(mf)
+	  var mf = new JZZ.MidiFile(s)
+	  console.log(mf)
+	  var outMeasures = displayMidiFile(mf)
 
 		console.log(outMeasures)
 		drawSheets(outMeasures)
 	}
-	catch(e)
-		{err(e)}
+	catch(e){ err(e) }
+}
+
+
+
+
+//this takes in a list of midi tracks and there events and returns a list of all the events in string format
+function translateMfEvents(mf){
+  var arg =[];
+  for (var i = 0; i < mf.length; i++)
+	{
+		if (mf[i] instanceof JZZ.MidiFile.MTrk)
+		{
+			for (var j = 0; j < mf[i].length; j++)
+			{
+				var evt = mf[i][j]
+				var s = evt.toString().replace(/&/g,'&amp;').replace(/>/g,'&gt;').replace(/</g,'&lt;')
+				arg.push(evt.time + " " + s)
+			}
+		}
+	}
+return arg;
+}
+
+
+
+function gatherEvents(arg){
+  var events={}
+  events.notes    = []
+  events.tempo     = []
+  events.keysig   = []
+  events.timesig  = []
+  var lasttime=0;
+  var hitnote=false;
+  var title;
+  	for (item in arg)
+  	{
+  		var lts = arg[item].split(' ');
+  		if(lasttime>parseInt(lts[0])&&hitnote){
+  			instruments[title[4]]=notes;
+  			notes=[]
+  		}
+  		lasttime=parseInt(lts[0]);
+
+  		if(lts[1] / 10 == 9)	events.notes.push(lts)
+  		if(lts[1] / 10 == 8)	events.notes.push(lts)
+  		if(lts[1] == "ff51")	events.tempo.push(lts)
+  		if(lts[1] == "ff59")	events.keysig.push(lts)
+  		if(lts[1] == "ff58")	events.timesig.push(lts)
+  		if(lts[1] == "ff03")	title=lts;
+  	}
+    return events
+}
+
+//this needs to be handed a list of that contains the starts and stops of notes and also the pulse per quater note
+function combineNotes(notes,ppqn){
+  var combined=[]
+  //go though and combine the note start and stops
+	for (item = 0; item < notes.length; item++)
+	{
+		if (notes[item][6] == "On")
+		{
+			for (thing = item+1; thing < notes.length; thing++)
+			{
+				if (notes[item][2] == notes[thing][2])
+				{
+					combined.push(
+					{
+						start:	notes[item][0],
+						finish:	notes[thing][0],
+						pitch:	notes[item][2],
+						note:	((notes[thing][0]-notes[item][0])/ppqn)/4
+					})
+					break
+				}
+			}
+		}
+	}
+
+}
+
+//this will take the list of notes and the time signature and then create list
+//of notes that fit into measures it will then also go and fill the gaps
+//inbetween notes with rests (notes with a pitch of negative one)
+function populateMeasures(){
+  var laststart = -1
+	var lastfinish = 0
+	var ppqmeas = ppqn*4
+	var holder
+	var measures = []
+	var meas = {m: []}
+
+	//populate measures
+	for (noter in notes2)
+	{
+		if(keysig[0]&&lastfinish==keysig[0][0]){
+				meas.key=keysig[0][4]
+				keysig=keysig.slice(1)
+		}
+		if(timesigs[0]&&lastfinish==timesigs[0][0]){
+			meas.time={top: timesigs[0][4].split('/')[0],
+								 bottem: timesigs[0][4].split('/')[1]}
+			timesigs=timesigs.slice(1)
+		}
+
+		if (lastfinish < notes2[noter].start)
+		{
+			//add rests here will need to loop
+			while (lastfinish != notes2[noter].start)
+			{
+				if (ppqmeas < notes2[noter].start)
+				{
+					meas.m.push(
+					{
+						start:	lastfinish,
+						finish:	ppqmeas,
+						pitch:	-1,
+						note:	((ppqmeas-lastfinish)/ppqn)/4
+					})
+					lastfinish = ppqmeas<notes2[noter].start ? ppqmeas : notes2[noter].start
+						measures.push(meas)
+						ppqmeas += ppqn*4
+					meas = {m:[]}
+				}
+				else
+				{
+					meas.m.push(
+					{
+						start:	lastfinish,
+						finish:	notes2[noter].start,
+						pitch:	-1,
+						note:	((notes2[noter].start-lastfinish)/ppqn)/4,
+
+					})
+					lastfinish = notes2[noter].start
+				}
+			}
+		}
+
+		if (notes2[noter].finish > ppqmeas)
+		{
+			//split note between measure will need to loop
+			while (notes2[noter].finish > ppqmeas)
+			{
+				meas.m.push(
+				{
+					start:	notes2[noter].start,
+					finish:	ppqmeas,
+					pitch:	notes2[noter][2],
+					note:	((ppqmeas-notes2[noter].start)/ppqn)/4,
+					tie: true
+				})
+				notes2[noter].start = ppqmeas
+				ppqmeas += ppqn*4
+				measures.push(meas)
+				meas = {m:[]}
+			}
+			lastfinish = notes2[noter].finish
+		}
+		else if (notes2[noter].finish == ppqmeas)
+		{
+			//add note and add meas
+			meas.m.push(notes2[noter])
+			measures.push(meas)
+			ppqmeas += ppqn*4
+			meas = {m:[]}
+			lastfinish = notes2[noter].finish
+		}
+		else
+		{
+			//add note
+			meas.m.push(notes2[noter])
+			lastfinish = notes2[noter].finish
+		}
+	}
+	return measures
 }
 
 function displayMidiFile(mf)
