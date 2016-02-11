@@ -17,6 +17,7 @@ class Tuner: UIViewController {
     var count = 0
     
     var noteList = [String]()
+    var noteNames = [String]()
     
     @IBAction func UpButton(sender: AnyObject) {
         if count == noteList.count-1 {
@@ -26,7 +27,7 @@ class Tuner: UIViewController {
            count++
         }
         print(count)
-        Note.text = noteList[count]
+        Note.text = noteNames[count]
     }
     
     @IBAction func DownButton(sender: AnyObject) {
@@ -37,12 +38,14 @@ class Tuner: UIViewController {
             count--
         }
         print(count)
-        Note.text = noteList[count]
+        Note.text = noteNames[count]
     }
     
     @IBOutlet var Note: UILabel!
     //play button: plays sound
     @IBAction func play(sender: AnyObject) {
+        
+        //Sets up the sound
         let alertSound = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource(noteList[count], ofType: "wav")!)
         print(alertSound)
         
@@ -73,9 +76,11 @@ class Tuner: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        noteList = ["0A", "10G", "11Gs", "1As", "2B", "3C", "4Cs", "5D", "6Ds","7E","8F","9Fs"]
+        noteList = ["0A", "1As", "2B", "3C", "4Cs", "5D", "6Ds", "7E", "8F", "9Fs", "10G", "11Gs"]
         
-        Note.text = noteList[count]
+        noteNames = ["A", "Bb", "B", "C", "C#", "D", "Eb", "E", "F", "F#", "G", "G#"]
+        
+        Note.text = noteNames[count]
         
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
     }
