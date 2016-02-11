@@ -1,86 +1,109 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Read MIDI File</title>
-<script src="JZZ.Midi.js"></script>
-<script src="JZZ.MidiFile.js"></script>
-
-<style type="text/css">
-button {
- width:6em;
-}
-#midi {
- font-family:Courier New, monospace;
- background-color:#eef;
- border:none;
- padding:0.2em;
-}
-#midi div {
- border:double;
- margin:0.2em;
-}
-#midi div div {
- border:none;
-}
-#midi div div.hdr {
- font-weight:bold;
- border:none;
-}
-#midi span.clk {
- width:6em;
- padding:0 0.5em;
- text-align:right;
- display:inline-block;
- background-color:#ddd;
-}
-#midi .wait {
- padding:.2em;
- font-size:1.5em;
- font-weight:bold;
- color:#888;
-}
-#midi .err {
- padding:.5em;
- font-size:1.2em;
- font-weight:bold;
- color:#d00;
-}
-</style>
+	<!-- External Scripts -->
+	<script src="vexflow-debug.js"></script>
+	<script src="vexflow-min.js"></script>
+	<script src="JZZ.Midi.js"></script>
+	<script src="JZZ.MidiFile.js"></script>
+	<script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+	<style type="text/css">
+	button {
+		width:6em;
+	}
+	#midi {
+		font-family:Courier New, monospace;
+		background-color:#eef;
+		border:none;
+		padding:0.2em;
+	}
+	#midi div {
+		border:double;
+		margin:0.2em;
+	}
+	#midi div div {
+		border:none;
+	}
+	#midi div div.hdr {
+		font-weight:bold;
+		border:none;
+	}
+	#midi span.clk {
+		width:6em;
+		padding:0 0.5em;
+		text-align:right;
+		display:inline-block;
+		background-color:#ddd;
+	}
+	#midi .wait {
+		padding:.2em;
+		font-size:1.5em;
+		font-weight:bold;
+		color:#888;
+	}
+	#midi .err {
+		padding:.5em;
+		font-size:1.2em;
+		font-weight:bold;
+		color:#d00;
+	}
+	canvas {
+		background: #eed;
+		padding: 10px;
+		border: 10px solid #ddc;
+	}
+	div.egcode {
+		font-family: Courier;
+		font-size: 14px;
+	}
+	</style>
 </head>
 
 <body>
-<h1>Read MIDI File</h1>
+<!-- Formatting Constants -->
+<script>
+	var STAFF_COUNT = 25
+	var CANVAS_WIDTH = 700
+	var CANVAS_HEIGHT = 120 * (STAFF_COUNT+1) + 20
+	var STAFF_OFFSET_X = 10
+	var STAFF_OFFSET_Y = 140
+	var STAFF_OFFSET_Y_CENTER = (CANVAS_HEIGHT - 120) / 2
+</script>
 
-<h2>from file:</h2>
-<p><input type=file id=file size=80 onchange='fromFile();'></p>
+<!-- Necessary, Hidden Divisions -->
+<div style="display: none;" id=fname>&nbsp;</div>
+<div style="display: none;" id=midi>Files accepted: SMF (*.mid, *.kar), RMID (*.rmi)</div>
 
-<h2>from URL:</h2>
-<form onsubmit='fromUrl(); return false;'>
-<p><input type=text id=url size=80><input type=submit value=Submit...></p>
-</form>
+<!-- Create canvas -->
+<script>
+	document.write('<p><canvas width=' + (CANVAS_WIDTH+25) + ' height=' + CANVAS_HEIGHT + '></canvas></p>')
+</script>
 
-<h2>from string: <button onclick='fromString();'>Read...</button></h2>
+<!-- ReadMidiFile -->
+<script>
+function err(e)	{/*document.getElementById('midi').innerHTML='<span class=err>'+e+'</span>';*/}
+function plzWait()	{/*document.getElementById('midi').innerHTML='<span class=wait>One moment please...</span>';*/}
+function fName(s)	{/*document.getElementById('fname').innerHTML='<tt>'+s+'</tt>';*/}
 
-<p>
-<div id=fname>&nbsp;</div>
-</p>
-<p>
-<div id=midi>Files accepted: SMF (*.mid, *.kar), RMID (*.rmi)</div>
-</p>
 
-<script><!--
-function fromFile(){
- plzWait(); fName(document.getElementById('file').value);
- if(window.FileReader){
-  var reader=new FileReader();
-  var f=document.getElementById('file').files[0];
-  reader.onload=function(e){ readMidiFile(e.target.result);};
-  reader.readAsBinaryString(f);
- }
- else err('File API is not supported in this browser!');
+function fromFile()
+{
+	plzWait()
+	fName(document.getElementById('file').value)
+
+	if (window.FileReader)
+	{
+		var reader = new FileReader()
+		var f = document.getElementById('file').files[0]
+		reader.onload = function(e)
+			{readMidiFile(e.target.result)}
+		reader.readAsBinaryString(f)
+	}
+	else
+		err('File API is not supported in this browser!')
 }
 function fromUrl(){
- var url=document.getElementById('url').value;
+ var url="http://people.eecs.ku.edu/~kroush/MidiToVex/Bach__Invention_No._13.mid"
  plzWait(); fName(url);
  try{
   var req=new XMLHttpRequest();
@@ -109,198 +132,348 @@ function fromUrl(){
  }
  catch(e){ err(e);}
 }
+//fromUrl()
 function fromString(){
- plzWait(); fName('Base64 string');
+ plzWait();
+ fName('Base64 string');
  readMidiFile(JZZ.MidiFile.fromBase64(b64));
 }
-function readMidiFile(s){
- try{
-  var mf=new JZZ.MidiFile(s);
-  displayMidiFile(mf);
- }
- catch(e){ err(e);}
+function fromPassedString(s){
+ plzWait();
+ fName('Base64 string');
+ readMidiFile(JZZ.MidiFile.fromBase64(s));
 }
-function displayMidiFile(mf){
-  var ppqn=mf.ppqn;
-  var arg = [];
-  var notes=[];
-  var tempo=[];
-  var keysig=[];
-  var timesigs=[];
-  var measures=[];
-  var meas=[];
+function readMidiFile(s)
+{
+console.log(s)
+	try
+	{
 
-  document.getElementById('midi').innerHTML='';
-  var chunk;
-  var div;
-  chunk=document.createElement('div');
-  chunk.innerHTML='<div class=hdr>MThd</div>';
-  div=document.createElement('div');
-  div.innerHTML='type: '+mf.type+(mf.ppqn?(', ppqn: '+mf.ppqn):(' smpte: '+mf.fps+'x'+mf.ppf));
-  chunk.appendChild(div);
-  document.getElementById('midi').appendChild(chunk);
-  for(var i=0;i<mf.length;i++){
-    chunk=document.createElement('div');
-    chunk.innerHTML='<div class=hdr>'+mf[i].type+'</div>';
-    if(mf[i].data){
-      div=document.createElement('div');
-      arr=[]; s=mf[i].data;
-      for(var j=0;j<s.length;j++){
-        var c=s.charCodeAt(j)<32?'-':s.charAt(j);
-        if(c=='&') c='&amp;';
-        if(c=='<') c='&lt;';
-        if(c=='>') c='&gt;';
-        var n=(s.charCodeAt(j)<16?'0':'')+s.charCodeAt(j).toString(16);
-        if(j && !(j%32)) arr.push('<br>');
-        else if(j && !(j%8)) arr.push('&nbsp;');
-        arr.push('<span title="'+c+'">'+n+'</span>');
-      }
-      div.innerHTML=arr.join(' ');
-      arg.push(arr.join(' '));
-      chunk.appendChild(div);
-    }
-    if(mf[i] instanceof JZZ.MidiFile.MTrk){
-      for(var j=0;j<mf[i].length;j++){
-        var evt=mf[i][j];
-        var s=evt.toString().replace(/&/g,'&amp;').replace(/>/g,'&gt;').replace(/</g,'&lt;');
+		var mf = new JZZ.MidiFile(s)
+		console.log(mf)
+		var outMeasures = displayMidiFile(mf)
 
-        div=document.createElement('div');
-        div.innerHTML="<span class=clk>"+evt.time+"</span> <span>"+s+"</span>";
-        arg.push(evt.time+" "+s)
-        chunk.appendChild(div);
-      }
-    }
-    document.getElementById('midi').appendChild(chunk);
-
-  }
-
-  var item,thing;
-  var notes2=[];
-  var singlemeasure=[];
-  for (item in arg){
-    var lts=arg[item].split(' ');
-      if(lts[1]/10==9)
-        notes.push(lts);
-      if(lts[1]/10==8)
-        notes.push(lts);
-      if(lts[1]=="ff51")
-        tempo.push(lts);
-      if(lts[1]=="ff59")
-        keysig.push(lts);
-      if(lts[1]=="ff58")
-        timesigs.push(lts);
-  }
-
-  for (item=0;item<notes.length;item++){
-    if(notes[item][6]=="On"){
-      for(thing=item+1; thing<notes.length;thing++){
-        if(notes[item][2]==notes[thing][2]){
-          notes2.push({
-            start: notes[item][0],
-            finish: notes[thing][0],
-            pitch: notes[item][2],
-            note: ((notes[thing][0]-notes[item][0])/ppqn)/4
-          });
-          break;
-        }
-      }
-    }
-  }
-var laststart=-1;
-var lastfinish=0;
-var ppqmeas=ppqn*4;
-var holder;
-for(noter in notes2){
-
-  if(lastfinish<notes2[noter].start){
-    //add rests here will need to loop
-    while(lastfinish!=notes2[noter].start){
-      if(ppqmeas<notes2[noter].start){
-        meas.push({
-          start: lastfinish,
-          finish:  ppqmeas,
-          pitch: -1,
-          note: ((ppqmeas-lastfinish)/ppqn)/4
-        });
-        lastfinish=ppqmeas<notes2[noter].start ? ppqmeas : notes2[noter].start
-        measures.push(meas)
-        ppqmeas+=ppqn*4;
-        meas=[]
-      }else{
-        meas.push({
-          start: lastfinish,
-          finish:  notes2[noter].start,
-          pitch: -1,
-          note: ((notes2[noter].start-lastfinish)/ppqn)/4
-        });
-        lastfinish=notes2[noter].start;
-      }
-    }
-
-  }
-  if(notes2[noter].finish>ppqmeas){
-    //split note between measure will need to loop
-    while(notes2[noter].finish >ppqmeas){
-      meas.push({
-        start: notes2[noter].start,
-        finish: ppqmeas,
-        pitch: notes2[noter][2],
-        note: ((ppqmeas-notes2[noter].start)/ppqn)/4
-      });
-      notes2[noter].start=ppqmeas;
-      ppqmeas+=ppqn*4;
-      measures.push(meas);
-      meas=[];
-    }
-  lastfinish=notes2[noter].finish;
-  }
-  else if (notes2[noter].finish==ppqmeas){
-    //add note and add meas
-    meas.push(notes2[noter]);
-    measures.push(meas);
-    ppqmeas+=ppqn*4;
-    meas=[]
-    lastfinish=notes2[noter].finish;
-  }
-  else{
-    //add note
-    meas.push(notes2[noter]);
-    lastfinish=notes2[noter].finish;
-  }
-
-
-
-
-
-
-
-
+		console.log(outMeasures)
+		drawSheets(outMeasures)
+	}
+	catch(e)
+		{err(e)}
 }
 
+function displayMidiFile(mf)
+{
+	var ppqn = mf.ppqn
+	var arg = []
+	var notes = []
+	var tempo = []
+	var keysig = []
+	var timesigs = []
+	var measures = []
+	var meas = {m: []}
 
-  console.log(ppqn);
-  console.log(notes);
-  console.log(notes2);
-  console.log(measures);
-  console.log(tempo);
-  console.log(keysig);
-  console.log(timesigs);
-  return measures;
+	//populate arg[]
+	for (var i = 0; i < mf.length; i++)
+	{
+		if (mf[i] instanceof JZZ.MidiFile.MTrk)
+		{
+			for (var j = 0; j < mf[i].length; j++)
+			{
+				var evt = mf[i][j]
+				var s = evt.toString().replace(/&/g,'&amp;').replace(/>/g,'&gt;').replace(/</g,'&lt;')
+				arg.push(evt.time + " " + s)
+			}
+		}
+	}
+
+	var item, thing
+	var notes2 = []
+	var singlemeasure = []
+	console.log("arg")
+	console.log(arg)
+	//separate midi events by type
+	var instruments={}
+
+var lasttime=0;
+var hitnote=false;
+var title;
+	for (item in arg)
+	{
+		var lts = arg[item].split(' ');
+		if(lasttime>parseInt(lts[0])&&hitnote){
+			instruments[title[4]]=notes;
+			notes=[]
+			console.log("here")
+
+		}
+		lasttime=parseInt(lts[0]);
+
+		if(lts[1] / 10 == 9)	notes.push(lts)
+		if(lts[1] / 10 == 8)	notes.push(lts)
+		if(lts[1] == "ff51")	tempo.push(lts)
+		if(lts[1] == "ff59")	keysig.push(lts)
+		if(lts[1] == "ff58")	timesigs.push(lts)
+		if(lts[1] == "ff03")	title=lts;
+	}
+
+			console.log("notes")
+			console.log(notes)
+	//populate notes2
+	//go though and combine the note start and stops
+	for (item = 0; item < notes.length; item++)
+	{
+		if (notes[item][6] == "On")
+		{
+			for (thing = item+1; thing < notes.length; thing++)
+			{
+				if (notes[item][2] == notes[thing][2])
+				{
+					notes2.push(
+					{
+						start:	notes[item][0],
+						finish:	notes[thing][0],
+						pitch:	notes[item][2],
+						note:	((notes[thing][0]-notes[item][0])/ppqn)/4
+					})
+					break
+				}
+			}
+		}
+	}
+
+	console.log("notes2")
+	//console.log(notes2)
+	var laststart = -1
+	var lastfinish = 0
+	var ppqmeas = ppqn*4
+	var holder
+	//populate measures
+	for (noter in notes2)
+	{
+		if(keysig[0]&&lastfinish==keysig[0][0]){
+				meas.key=keysig[0][4]
+				keysig=keysig.slice(1)
+		}
+		if(timesigs[0]&&lastfinish==timesigs[0][0]){
+			meas.time={top: timesigs[0][4].split('/')[0],
+								 bottem: timesigs[0][4].split('/')[1]}
+			timesigs=timesigs.slice(1)
+		}
+
+		if (lastfinish < notes2[noter].start)
+		{
+			//add rests here will need to loop
+			while (lastfinish != notes2[noter].start)
+			{
+				if (ppqmeas < notes2[noter].start)
+				{
+					meas.m.push(
+					{
+						start:	lastfinish,
+						finish:	ppqmeas,
+						pitch:	-1,
+						note:	((ppqmeas-lastfinish)/ppqn)/4
+					})
+					lastfinish = ppqmeas<notes2[noter].start ? ppqmeas : notes2[noter].start
+						measures.push(meas)
+						ppqmeas += ppqn*4
+					meas = {m:[]}
+				}
+				else
+				{
+					meas.m.push(
+					{
+						start:	lastfinish,
+						finish:	notes2[noter].start,
+						pitch:	-1,
+						note:	((notes2[noter].start-lastfinish)/ppqn)/4,
+
+					})
+					lastfinish = notes2[noter].start
+				}
+			}
+		}
+
+		if (notes2[noter].finish > ppqmeas)
+		{
+			//split note between measure will need to loop
+			while (notes2[noter].finish > ppqmeas)
+			{
+				meas.m.push(
+				{
+					start:	notes2[noter].start,
+					finish:	ppqmeas,
+					pitch:	notes2[noter][2],
+					note:	((ppqmeas-notes2[noter].start)/ppqn)/4,
+					tie: true
+				})
+				notes2[noter].start = ppqmeas
+				ppqmeas += ppqn*4
+				measures.push(meas)
+				meas = {m:[]}
+			}
+			lastfinish = notes2[noter].finish
+		}
+		else if (notes2[noter].finish == ppqmeas)
+		{
+			//add note and add meas
+			meas.m.push(notes2[noter])
+			measures.push(meas)
+			ppqmeas += ppqn*4
+			meas = {m:[]}
+			lastfinish = notes2[noter].finish
+		}
+		else
+		{
+			//add note
+			meas.m.push(notes2[noter])
+			lastfinish = notes2[noter].finish
+		}
+	}
+	return measures
 }
-function err(e){ document.getElementById('midi').innerHTML='<span class=err>'+e+'</span>';}
-function plzWait(){ document.getElementById('midi').innerHTML='<span class=wait>One moment please...</span>';}
-function fName(s){ document.getElementById('fname').innerHTML='<tt>'+s+'</tt>';}
-var b64='\
-TVRoZAAAAAYAAQADAGRNVHJrAAAAGgD/AwtMaXR0bGUgTGFtYgD/UQMKLCsA/y8ATVRyawAAAPEA/wMF\
-V29yZHMA/wEYQFRNYXJ5IEhhZCBBIExpdHRsZSBMYW1iZP8BA1xNYTL/AQNyeSAy/wEEaGFkIDL/AQJh\
-IDL/AQNsaXQy/wEEdGxlIDL/AQVsYW1iLGT/AQQvTGl0Mv8BBHRsZSAy/wEFbGFtYixk/wEEL0xpdDL/\
-AQR0bGUgMv8BBWxhbWIsZP8BAy9NYTL/AQNyeSAy/wEEaGFkIDL/AQJhIDL/AQNsaXQy/wEEdGxlIDL/\
-AQVsYW1iLGT/AQYvQmxhaC0y/wEFYmxhaC0y/wEFYmxhaC0y/wEFYmxhaC0y/wEFYmxhaCEA/y8ATVRy\
-awAAALkA/wMFTXVzaWMAwAtkkEB/MkAAAD5/Mj4AADx/MjwAAD5/Mj4AAEB/MkAAAEB/MkAAAEB/WkAA\
-Cj5/Mj4AAD5/Mj4AAD5/Wj4ACkB/MkAAAEN/MkMAAEN/WkMACkB/MkAAAD5/Mj4AADx/MjwAAD5/Mj4A\
-AEB/MkAAAEB/MkAAAEB/WkAACj5/Mj4AAD5/Mj4AAEB/MkAAAD5/Mj4AADx/ZEBkAENkAEh/WjwAAEAA\
-AEMAAEgACv8vAA==';
---></script>
+</script>
 
+<!-- Measures to VexFlow -->
+<script>
+function durToWhole(inFloat) //.125 > 8
+{
+	return 1 / inFloat
+}
+
+function pitToStr(inHex) //5C > G#6
+{
+	if (inHex == -1)
+		return 'B/4' //rest position
+
+	var note = Vex.Flow.integerToNote(parseInt(inHex, 16) % 12)
+	var octave = parseInt(parseInt(inHex, 16) / 12)-1
+
+	return note + '/' + octave
+}
+
+function drawSheets(inM)
+{
+
+	var timesig = {top: 4,
+							   bottem: 4
+								};
+	var keysig={name: "C",
+							acidentals:[]
+						}
+
+
+	for (var mC = 0; mC < inM.length; mC++)
+	{
+		var canvas = $("canvas")[0]
+		//var canvas = $("canvas")[mC]
+		var renderer = new Vex.Flow.Renderer(canvas, Vex.Flow.Renderer.Backends.CANVAS)
+		var ctx = renderer.getContext()
+		var stave = new Vex.Flow.Stave(STAFF_OFFSET_X, STAFF_OFFSET_Y * mC, CANVAS_WIDTH)
+
+		// Add a treble clef
+		stave.addClef("treble")
+		if(inM[mC].time!=undefined){
+			stave.addTimeSignature(""+timesig.top+'/'+timesig.bottem)
+			timesig =inM[mC].time
+		}
+		if(inM[mC].key!=undefined){
+			keysig.name =inM[mC].key
+			keysig.Accidental=[]
+
+			//stave.addKeySignature(keysig.name)
+		}
+		stave.addKeySignature(keysig.name)
+		stave.setContext(ctx).draw()
+
+		//create notes from inM
+		var notes = []
+
+
+		console.log('measure ' + mC)
+		var forbeamnotes=[],
+		    allbeams=[],
+				lengthofbeam=0;
+		for (var n = 0, i=0; n < inM[mC].m.length; n++)
+		{
+			var pit = pitToStr(inM[mC].m[n].pitch)
+			var dur = durToWhole(inM[mC].m[n].note) + (inM[mC].m[n].pitch == -1 ? 'r' : '') //append 'r' if this note is a rest
+			console.log('note' + n + ': ' + dur + ', ' + pit)
+
+
+			notes.push(new Vex.Flow.StaveNote({ keys: [pit], duration: dur }))
+			if(!keysig.acidentals.includes(pit)&&pit.includes('#')){
+				notes[notes.length-1].  addAccidental(0, new Vex.Flow.Accidental("#"))
+			}
+			if(i<4&&inM[mC].m[n].note<.25){
+				forbeamnotes.push(notes[notes.length-1])
+				i++;
+				lengthofbeam+=inM[mC].m[n].note;
+			}else if((1/(lengthofbeam/.50))%2==0){
+
+				allbeams.push(new Vex.Flow.Beam(forbeamnotes))
+				console.log(forbeamnotes)
+				forbeamnotes=[];
+				lengthofbeam=0;
+				i=0;
+			}else{
+				forbeamnotes=[];
+				lengthofbeam=0;
+				i=0;
+			}
+			if(i==4||(lengthofbeam==.5&&i>1)||((1/(lengthofbeam/.50))%2==0&&n == inM[mC].m.length-1)){
+				console.log(forbeamnotes)
+				allbeams.push(new Vex.Flow.Beam(forbeamnotes))
+				forbeamnotes=[];
+				lengthofbeam=0;
+				i=0;
+			}
+		}
+		console.log('')
+
+		// Create a voice in 4/4
+		function create_voice(sig)
+		{
+			return new Vex.Flow.Voice(
+			{
+				num_beats:	sig.top,
+				beat_value:	sig.bottem,
+				resolution:	Vex.Flow.RESOLUTION
+			})
+		}
+
+		// Create voices and add notes to each of them
+		var voice = create_voice(timesig).addTickables(notes)
+
+		// Format and justify the notes
+		var formatter = new Vex.Flow.Formatter().joinVoices([voice]).format([voice], CANVAS_WIDTH)
+
+		// Render voice
+		voice.draw(ctx, stave)
+		while(allbeams.length){
+			allbeams.pop().setContext(ctx).draw();
+		}
+	}
+///	console.log("Successful run!")
+}
+//loader()
+	function loader(){
+		songname=document.location.search.split("=")[1]
+		console.log(songname);
+
+		  $.get('http://people.eecs.ku.edu/~sbenson/grabMidi.php',{
+		          title: songname
+							//url: 'http://people.eecs.ku.edu/~sbenson/grabMidi.php'
+		        },
+		    function(data, status){
+					console.log(status)
+					console.log(data)
+					fromPassedString(data)
+		  });
+
+	}
+
+
+
+</script>
 </body>
 </html>
